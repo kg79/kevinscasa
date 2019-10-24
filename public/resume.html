@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style>
+			html, body {
+				margin:0;
+			}
+			section {
+				width:80vw;
+				margin:auto;
+			} h1 {
+				color:blue;
+			} article {
+				font-family:'sans-serif';
+				width:70vw;
+				margin:auto;
+			} .title {
+				font-weight:bold;
+				margin:1%;
+			} .date {
+				color:blue;
+				margin:1%;
+			} .content {
+				margin:1%;
+			}	
+			
+			hr {
+				border:solid 1px black;
+			} #skillSection {
+				display:flex;
+				justify-content:space-around;
+			} #leftSkills {
+				flex-grow:1;
+				display:flex;
+				flex-direction:column;
+			} #rightSkills {
+				flex-grow:1;
+				display:flex;
+				flex-direction:column;
+				border-left:1px black solid;
+			} .skills {
+				display:flex;
+				justify-content:space-around;
+			} #htmlExpert {
+				position:relative;
+				right:1.41vw;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h1>
+				Kevin Galvan
+			</h1>
+			<article>
+				2215 Bauer Dr, Houston, Tx 77080<br>
+				klgalvan79@gmail.com<br>
+				(512)680-0913<br>
+				github: kg79<br>
+				<a href="/">kevingalvan.casa</a>  	
+			</article>
+		</section>
+		<section>
+			<h2>
+				Objective
+			</h2>
+			<hr>
+			<article>
+			Full-Stack JavaScript Developer looking for a position at an established company,
+			where I can apply my three years of training in Front-End, 
+			Back-End Development, and UI/UX Design, to contribute to a higher goal.
+		</section>
+		<section>
+			<h2>
+				Employment History
+			</h2>
+			<hr>
+			<article>
+			<div class="title">Web Designer/Digital Marketing, Wellness Spa, Galveston, Tx </div>
+			<div class="date">May 2018 - Present </div>
+			<div class="content">
+			I design and edit the content of their website, in addition to creating advertisements on various social media platforms. 
+			    </div>
+			</article>
+				
+			<article>
+			<div class="title">Customer Service/Graphic Design, Dream Tree, Houston, TX</div>
+			<div class="date">Dec. 2018 - Jun. 2019</div>
+			<div class="content">
+			I explained the product to customers, processed memberships, handled transactions, with the addition of Graphic 
+			Design responsibilities for signs and advertisements. 
+			</div>
+			</article>
+
+			<article>
+			<div class="title">Server, Alamo Drafthouse, Austin, Texas</div>
+			<div class="date">Apr. 2017 - Feb. 2018</div>
+			<div class="content">
+
+		       	I took orders from clients and responded to their requests with accuracy and efficiency.	       
+			</div>
+			</article>
+
+
+		</section>
+		<section>
+			<h2>
+				Education
+			</h2>
+			<hr>
+			<article>
+				<div class="title">San Jacinto Community College, Pearland, Tx</div>
+				<div class="date">Associate of Science, Business, May. 2013</div>
+			</article>
+			<article>
+				<div class="title">Galvanize Web Development Immersive, Austin, Tx</div>
+				<div class="date">Attended Feb-May 2018
+			</div></article>
+		</section>
+		<section>
+			<h2>Skills</h2>
+			<hr>
+			<article id="skillSection">
+				<div id="leftSkills">
+				<div id="htmlExpert" class="skills"><span>HTML</span><span>Expert</span></div>
+				<div class="skills"><span>CSS</span><span>Experienced</span></div>
+				<div class="skills"><span>Linux</span><span>Intermediate</span></div>
+				</div>
+				<div id="rightSkills">
+			<div class="skills"><span>JavaScript</span><span>Experienced</span></div>
+			<div class="skills"><span>PHP</span><span>Beginner</span></div>
+			<div class="skills"><span>Node.js</span><span>Experienced</span></div>
+				</div>
+			</article>
+		</section>
+
+	
+	<script>
+	const skillSection = document.getElementById('skillSection');
+	let regularExpression = new RegExp('arm');
+	if (regularExpression.test(navigator.platform)) {
+		skillSection.style.fontSize = '200%';
+	}
+	</script>
+
+</body></html>

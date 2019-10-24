@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+	
+    html, body {
+        margin:0;
+        overflow-y:hidden;
+    } #can {
+        margin:0;
+        z-index:-1;
+        position:fixed;
+        background:black;
+    }
+
+    header {
+        height:10vh;
+        font-family: 'Fascinate Inline', cursive;
+        display:flex;
+        flex-direction:column;
+    } #myName {
+        align-self:center;
+        position:fixed;
+        margin:1%;
+        font-size:300%;
+        color:rgb(216, 199, 41);
+        text-shadow:black -2px 2px;
+    }
+    
+    #hamburger {
+        width:fit-content;
+        background:white;
+        z-index:1;
+        line-height:.3em;
+        font-weight:bold;
+        font-size:270%;
+        padding:.5%;
+        padding-bottom:.3em;
+        margin:.9%;
+        border:solid .1em black;
+        float:right;
+        border-radius:.2em;
+        cursor:pointer;
+        align-self:flex-end;
+    }
+
+    main {
+        color:black;
+        height:90vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    } #contact {
+        display:flex;
+        flex-direction:column;
+        justify-content: space-around;
+        position:fixed;
+        background:black;
+        align-items:center;
+    } .inputArea {
+        background:white;
+        text-align:center;
+        padding:1%;
+    } input, textarea {
+        background:black;
+        color:hsl(320, 40%, 50%);
+        font-weight:bold;
+    }
+
+    #navigation {
+        background:hsl(320, 40%, 50%);
+        position:absolute;
+        top:23vh;
+        right:6vw;
+        height:61vh;
+        width:10vw;
+        visibility:hidden;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+    } .navElements {
+        background:black;
+        color:white;
+        text-align:center;
+        font-family: 'Raleway', sans-serif;
+    } a {
+        color:white;
+    }
+
+
+
+        </style>
+    </head>
+    <body>
+      <canvas id='can'></canvas>
+
+<header>
+        <div id='hamburger'>
+                &mdash;<br/>
+                &mdash;<br/>
+                &mdash;<br/>
+            </div>
+    <div id='myName'>Contact</div>
+
+</header>
+
+      <main>
+
+
+                <form method='POST' action='/sendMessage' id='contact'>
+                        <article class='inputArea' style='background:black;color:white;'>
+                            Any comments or questions will be appreciated.
+                        </article>
+
+                        <article class='inputArea'><label>Name: </label>
+                            <input name='name'>
+                        </article>
+
+                        <article class='inputArea'><label>Title: </label>
+                            <input name='title'>
+                        </article>
+
+                        <article class='inputArea'><label>Email: </label>
+                            <input name='email'>
+                        </article>
+						
+                        <article class='inputArea'><label>Organization: </label>
+                            <input name='org'>
+                        </article>
+                        
+						<article class='inputArea'><label>Message: </label><br/>
+						    <textarea cols='50' rows='10' name='message'></textarea>
+                        </article>
+
+                        <article class='inputArea'>
+						    <input type='submit'>
+                        </article>
+				</form>
+
+
+        <section id='navigation'>
+            <article class='navElements'><a href='/home'>home</a></article>
+            <article class='navElements'><a href='/music'>music</a></article>
+            <article class='navElements'><a href='/projects'>projects</a></article>
+            <article class='navElements'><a href='/resume'>resume</a></article>
+            <article class='navElements'><a href='/contact'>contact</a></article>
+        </section>
+      </main>
+
+    </body>
+    <script>
+    const can = document.getElementById('can');
+const ctx = can.getContext('2d');
+
+can.width = window.innerWidth;
+can.height = window.innerHeight;
+
+console.log(window.innerWidth)
+
+
+ctx.strokeStyle = 'hsl(320, 40%, 50%)';
+ctx.lineWidth = '3';
+
+let r;
+
+if (window.innerWidth > 650) {
+    r = window.innerWidth/24;
+} else if (window.innerWidth <= 650 ) {
+    r = window.innerWidth/9;
+}
+
+let windowHeight = window.innerHeight;
+let windowWidth = window.innerWidth;
+
+let x = r/2, y = 0 - (r/2 * Math.sqrt(3)), count = 0;
+
+function across() {
+    while (y <= windowHeight + r) {
+        while (x < windowWidth + r) {
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI*2);
+            ctx.stroke();
+            ctx.closePath();
+            x += r;
+        }
+    x = 0 - (r/2) * count;
+    y = (r/2 * Math.sqrt(3)) * count;
+    count++;
+    }
+}
+across()
+
+
+const hamburger = document.getElementById('hamburger');
+const navigation = document.getElementById('navigation');
+
+let clicked = false;
+
+hamburger.addEventListener('click', () => {
+    if (clicked === true) {
+        navigation.style.visibility = 'hidden'
+        clicked = false;
+    } else if (clicked === false) {
+        navigation.style.visibility = 'visible'
+        clicked = true;
+    }
+})
+
+
+    </script>
+</html>
