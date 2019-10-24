@@ -29,23 +29,19 @@
 			hr {
 				border:solid 1px black;
 			} #skillSection {
+				display:grid;
+				grid-template-columns:auto auto;
+				font-size:90%;
+			} 
+			#leftSkills, #rightSkills {
+				padding:1%;
+			} #rightSkills {	
+				border-left:black solid 2px;
+			} 
+			
+			.skills {
 				display:flex;
 				justify-content:space-around;
-			} #leftSkills {
-				flex-grow:1;
-				display:flex;
-				flex-direction:column;
-			} #rightSkills {
-				flex-grow:1;
-				display:flex;
-				flex-direction:column;
-				border-left:1px black solid;
-			} .skills {
-				display:flex;
-				justify-content:space-around;
-			} #htmlExpert {
-				position:relative;
-				right:1.41vw;
 			}
 		</style>
 	</head>
@@ -119,30 +115,39 @@
 				<div class="date">Attended Feb-May 2018
 			</div></article>
 		</section>
+
 		<section>
 			<h2>Skills</h2>
 			<hr>
+
 			<article id="skillSection">
+
 				<div id="leftSkills">
-				<div id="htmlExpert" class="skills"><span>HTML</span><span>Expert</span></div>
+
+				<div class="skills"><span>HTML</span><span>Expert</span></div>
 				<div class="skills"><span>CSS</span><span>Experienced</span></div>
 				<div class="skills"><span>Linux</span><span>Intermediate</span></div>
+
 				</div>
+
 				<div id="rightSkills">
+
 			<div class="skills"><span>JavaScript</span><span>Experienced</span></div>
 			<div class="skills"><span>PHP</span><span>Beginner</span></div>
 			<div class="skills"><span>Node.js</span><span>Experienced</span></div>
+
 				</div>
-			</article>
+
+			</article>			
 		</section>
 
 	
 	<script>
-	const skillSection = document.getElementById('skillSection');
-	let regularExpression = new RegExp('arm');
-	if (regularExpression.test(navigator.platform)) {
-		skillSection.style.fontSize = '200%';
-	}
+	// const skillSection = document.getElementById('skillSection');
+	// let regularExpression = new RegExp('arm');
+	// if (regularExpression.test(navigator.platform)) {
+	// 	skillSection.style.fontSize = '200%';
+	// }
 	</script>
 
 </body></html>
