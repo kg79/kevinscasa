@@ -21,7 +21,6 @@
         font-family: 'Fascinate Inline', cursive;
         display:flex;
         justify-content:center;
-        align-items:center;
         flex-direction:column;
     } #myName {
         margin:auto;
@@ -30,12 +29,15 @@
         color:rgb(216, 199, 41);
         text-shadow:black -2px 2px;
         font-size:140%;
-        text-align:center;
+        margin-left:.8em;
     }
     @media only screen and (min-width: 900px) {
-        #myName {
+        header {
+            align-items:center;
+        } #myName {
             font-size:270%;
             top:.5em;
+            margin-left:0em;
         }
     }
     
@@ -67,7 +69,7 @@
         text-align:center;
     } img {
         height:auto;
-        width:62vw;
+        width:40vw;
     } 
 
     @media only screen and (min-width: 900px) {
@@ -75,7 +77,7 @@
             display:flex;
         } img {
             height:auto;
-            width:auto;
+            width:30vw;
         } #greeting {
             width:20em;
         }
@@ -139,7 +141,7 @@
 
       <main>
         <section id='card'>
-            <img src='croppedHeadshot.jpg'>
+            <img src='kevin-galvan.jpg'>
             <article id='greeting'>
                 <p id='hello'>
                     Hello!

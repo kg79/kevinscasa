@@ -17,14 +17,14 @@
     }
 
     header {
-        height:10vh;
+        height:3vh;
         font-family: 'Fascinate Inline', cursive;
         display:flex;
         flex-direction:column;
     } #myName {
         align-self:center;
         position:fixed;
-        margin:1%;
+        top:1vh;
         font-size:300%;
         color:rgb(216, 199, 41);
         text-shadow:black -2px 2px;
@@ -49,7 +49,7 @@
 
     main {
         color:black;
-        height:90vh;
+        height:97vh;
         display:flex;
         justify-content:center;
         align-items:center;
@@ -60,11 +60,12 @@
         position:fixed;
         background:black;
         align-items:center;
+        padding:1%;
     } .inputArea {
         background:white;
         text-align:center;
         padding:1%;
-        width:90%;
+        width:92%;
     } input, textarea {
         background:black;
         color:hsl(320, 40%, 50%);
@@ -113,9 +114,10 @@
 
 
                 <form method='POST' action='/sendMessage' id='contact'>
-                        <article class='inputArea' style='background:black;color:white;'>
-                            Any comments or questions will be appreciated.
-                        </article>
+
+                    <article class='inputArea'>
+                        Any comments or questions will be appreciated.
+                    </article>
 
                         <article class='inputArea'><label>Name: </label>
                             <input name='name'>
@@ -134,7 +136,7 @@
                         </article>
                         
 						<article class='inputArea'><label>Message: </label><br/>
-						    <textarea cols='50' rows='10' name='message'></textarea>
+						    <textarea rows='6' name='message'></textarea>
                         </article>
 
                         <article class='inputArea'>

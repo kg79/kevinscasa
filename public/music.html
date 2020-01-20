@@ -53,7 +53,7 @@
 
     main {
         color:black;
-        height:88.3vh;
+        height:90vh;
         display:flex;
         justify-content:center;
         align-items:center;
@@ -66,26 +66,31 @@
         background:black;
         color:white;
         align-items:center;
-        height:50vh;
-        margin:2%;
-        padding:1%;
+        /* height:50vh;
+        width:50vw; */
     } 
 
     table {
         border-collapse:collapse;
         font-family:sans-serif;
         margin:1%;
-        width:80%;
+        /* width:80%; */
     } th, td {
         border:solid .05em hsl(110, 40%, 50%);
     }
 
     #controls {
         background:hsl(110, 40%, 50%);
+        width:100%;
+    } .controlPortion {
+        text-align:center;
+
+    } #bottomPortion {
         display:flex;
         justify-content:space-around;
-        width:86%;
-    } .controlButton {
+    }
+    
+    .controlButton {
         background:black;
         border-radius:1em;
         cursor:pointer;
@@ -154,11 +159,17 @@
     </table>
 
     <section id='controls'>
-        <div class='controlButton' id='previous'>&leftarrow;</div>
+
+        <article class='controlPortion'>
             <audio id='audioNode' controls autoplay>
                 <source src='walkHome.mp3'>
             </audio>
-        <div class='controlButton' id='next'>&rightarrow;</div>
+        </article>
+
+        <article class='controlPortion' id='bottomPortion'>
+            <div class='controlButton' id='previous'>&leftarrow;</div>
+            <div class='controlButton' id='next'>&rightarrow;</div>
+        </article>
     </section>
 </section>
 
